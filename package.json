@@ -1,0 +1,12 @@
+{
+  "name": "gamepad-remote",
+  "version": "0.1",
+  "author": "Shubham Jain @shubhamjainco",
+  "description": "Use your Gamepad Controller to control media on your PC.",
+  "license": "MIT",
+  "dependencies": {
+    "gamepad": "^1.6.0",
+    "robotjs": "^0.5.1",
+    "start-stop-daemon": "^0.1.1"
+  }
+}
