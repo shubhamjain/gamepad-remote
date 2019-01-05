@@ -16,15 +16,15 @@ Have a wireless controller like this lying around? Use it to remotely control yo
 
 Use to install the package.
 
-`npm install gamepad-remote`
+`npm install -g gamepad-remote`
 
 Start the program by:
 
-`gamepad-remote start`
+`gamepad-remote.js start`
 
 Stop it by:
 
-`gamepad-remote stop`
+`gamepad-remote.js stop`
 
 ## License 
 MIT
