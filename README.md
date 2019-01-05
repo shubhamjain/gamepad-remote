@@ -14,7 +14,7 @@ Have a wireless controller lying around? Repurpose it for triggering media actio
 
 ## Usage
 
-Use to install the package.
+Use `npm` to install the package.
 
 `npm install -g gamepad-remote`
 
