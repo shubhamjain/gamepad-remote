@@ -2,9 +2,9 @@
 
 > Use your Gamepad Controller to control media on your PC.
 
-Have a wireless controller like this lying around? Use it to remotely control your PC: play/pause, seek, and control volume. 
+Have a wireless controller lying around? Repurpose it for triggering media actions: play/pause, seek, and control volume. 
 
-**Note**: Gamepad remote maps your controller button to keyboard keys. The media actions are not universal but do work on major sites/media players (Netflix, Youtube, VLC et. al). Here's the list of mapping. 
+**Note**: Gamepad Remote works by mapping your controller buttons to keyboard keys. The media actions are not universal, but  work on most major sites/media players (Netflix, Youtube, VLC et. al). The mapping of buttons is based on [XBox Wireless Controller](https://www.bestbuy.ca/en-ca/product/xbox-xbox-one-wireless-controller-white-tf5-00001/10450316.aspx). 
 
 | Gamepad Button  | Media Action | Keyboard key mapping  |
 |---------------|------------|---------------|
