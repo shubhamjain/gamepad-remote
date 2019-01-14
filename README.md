@@ -10,7 +10,7 @@ Have a wireless controller like this lying around? Use it to remotely control yo
 |---------------|------------|---------------|
 | A  | Play/pause   | Spacebar   |
 | Right/Left Arrow  | Seek   | Right/Left Arrow  |
-|  Up/Down Arrow |  Vol Control  |  Up/Down Arrow |
+|  Up/Down Arrow |  Vol Control  |  Up/Down Arrow | 
 
 ## Usage
 
@@ -25,6 +25,8 @@ Start the program by:
 Stop it by:
 
 `gamepad-remote.js stop`
+
+You can also disable/enable the bindings by pressing: **RB + RB + LB + LB**.
 
 ## License 
 MIT
