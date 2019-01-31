@@ -46,32 +46,33 @@ const RC = {
   }
 }
 
-// Sequence object to trigger a callback on a particular key sequence
+// Sequence object to trigger a callback for a particular key sequence
 const Seq = {
-  THRESHOLD: 700,
+  THRESHOLD_TS: 700, 
 
   keyArr: [],
+  lastKeyTs: 0, // Unix timestamp for the last key press
   subscriptions: [],
 
   add: function (key) {
     const lastKey = this.keyArr [this.keyArr.length - 1];
 
-    if (lastKey && (Date.now() - lastKey.timestamp) > this.THRESHOLD) {
+    if (lastKey && (Date.now() - this.lastKeyTs) > this.THRESHOLD_TS) {
       this.keyArr = [];
     }
 
-    this.keyArr.push ({
-      key,
-      timestamp: Date.now ()
-    });
+    this.keyArr.push (key);
+    this.lastKeyTs = Date.now();
   
     for (let i = 0; i < this.subscriptions.length; i++) {
       const subscription = this.subscriptions [i];
-      const keyArrSeq = this.keyArr.map((keyObj) => {
-        return keyObj.key;
-      }).join("_");
+      const keysWerePressedInSeq = subscription.seq.every ((val, index) => {
+        const currKey = this.keyArr [index];
+        
+        return currKey && val === currKey;
+      });
 
-      if (subscription.seq.join("_") === keyArrSeq) {
+      if (keysWerePressedInSeq) {
         subscription.callback ();
       }
     }
@@ -96,7 +97,7 @@ startStopDaemon (function () {
 
   RC.sendNotification(true);
 
-  // Subscribe to both sequence since both can be confused.
+  // Subscribe to both sequences since they can be confused.
   Seq.subscribeTo ([
     GAMEPAD_KEYS.LB,
     GAMEPAD_KEYS.LB,
@@ -113,10 +114,6 @@ startStopDaemon (function () {
     GAMEPAD_KEYS.LB
   ], function () {
     RC.toggle ()
-  });
-
-  gamepad.on ("move", function (id, axis, value) {
-    console.log (id, axis, value);
   });
   
   gamepad.on ("up", function (id, num) {
